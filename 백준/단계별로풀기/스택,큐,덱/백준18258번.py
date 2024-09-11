@@ -1,6 +1,7 @@
 import sys
+from collections import deque
 n = int(sys.stdin.readline())
-queue = []
+queue = deque([])
 for i in range(n):
     command = sys.stdin.readline().split()
     if command[0] == 'push':
@@ -9,7 +10,7 @@ for i in range(n):
         if len(queue) == 0:
             print(-1)
         else :
-            print(queue.pop(0))
+            print(queue.popleft())
     elif command[0] == 'size':
         print(len(queue))
     elif command[0] == 'empty':
