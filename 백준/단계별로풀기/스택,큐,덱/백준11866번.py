@@ -7,7 +7,6 @@ yosep = []
 queue = deque([i for i in range(1, n+1)])
 
 while queue:
-    # k-1번 회전
     for j in range(k-1):
         queue.append(queue.popleft())
     yosep.append(queue.popleft())
