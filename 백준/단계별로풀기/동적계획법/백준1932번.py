@@ -13,4 +13,5 @@ for i in range(1,n):
       d[i][j]=d[i][j]+d[i-1][j-1]
     else:
       d[i][j]=max(d[i-1][j-1],d[i-1][j])+d[i][j]
+
 print(max(d[n-1]))
