@@ -1,13 +1,16 @@
 import sys
 n = int(sys.stdin.readline())
-num_list = list(map(int, sys.stdin.readline().split()))
-max_minus = 0
-num_list_index = 0
+a = list(map(int, sys.stdin.readline().split()))
 
-for i in range(len(num_list) - 1):
-    minus = num_list[i + 1] - num_list[i]
-    if minus > max_minus:
-        max_minus = minus
-        num_list_index = i + 1
+dp = [0] * n
+max_length = 0
 
-print(num_list_index)g
+for i in range(n):
+    for j in range(i):
+        if a[i] > a[j] and dp[i] < dp[j]:
+            dp[i] = dp[j]
+    dp[i] += 1
+    if dp[i] > max_length:
+        max_length = dp[i]
+
+print(max_length)
