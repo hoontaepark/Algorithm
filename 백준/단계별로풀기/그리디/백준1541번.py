@@ -1,0 +1,3 @@
+exp = input().split('-')
+
+number = []
